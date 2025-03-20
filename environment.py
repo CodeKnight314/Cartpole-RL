@@ -5,8 +5,6 @@ from replay import ReplayBuffer
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import torch.nn.functional as F
-import numpy as np
 import yaml
 import os
 from gym.wrappers.monitoring import video_recorder
