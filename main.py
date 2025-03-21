@@ -1,5 +1,6 @@
 from environment import Environment
 import argparse
+import os
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Deep Q Network')
@@ -7,7 +8,10 @@ if __name__ == "__main__":
     parser.add_argument('--output', type=str, default='output', help='Path to the output directory')
     args = parser.parse_args()
 
+    if not os.path.exists(args.output):
+        os.makedirs(args.output)
+
     env = Environment(args.config)
-    env.train_dqn(args.path)
-    env.test_dqn(args.path)
+    env.train_dqn(args.output)
+    env.test_dqn(args.output)
     env.close()
