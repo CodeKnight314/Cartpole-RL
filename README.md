@@ -8,11 +8,6 @@ This is an exercise on using Q-Learning models for OpenAI's gym environment, spe
   <img src="src/resources/demo.gif" alt="Video of cartpole model">
 </p>
 
-## Table of Contents
-- [Installation](#installation)
-- [Training](#training)
-- [Testing](#testing)
-
 ## Installation
 1. Git clone the repository:
 ```bash
