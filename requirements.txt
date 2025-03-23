@@ -5,3 +5,7 @@ matplotlib
 pandas
 seaborn
 scikit-learn
+opencv-python
+gym[classic_control]
+tqdm
+optuna
