@@ -5,7 +5,7 @@ This is an exercise on using Q-Learning models for OpenAI's gym environment, spe
 
 ## Results
 <p align="center">
-  <img src="src/resource/demo.gif" alt="Video of cartpole model">
+  <img src="src/resources/demo.gif" alt="Video of cartpole model">
 </p>
 
 ## Table of Contents
