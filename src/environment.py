@@ -45,11 +45,12 @@ class Environment:
         avg_grad = [0]
         avg_loss = [0]
         pbar = tqdm(range(self.config["episode"]))
+        steps = 0
         for episode in pbar:
             state, _ = self.env.reset()
             total_reward = 0
             done = False
-            
+
             while not done:
                 if random.random() < self.epsilon:
                     action = self.env.action_space.sample()
@@ -84,9 +85,10 @@ class Environment:
                     self.optimizer.step()
 
                     avg_loss.append(loss.item())
-            
-            if episode % self.target_update_freq == 0:
-                self.update_target_model()
+
+                steps += 1
+                if steps % self.target_update_freq == 0:
+                    self.update_target_model()
                     
             self.epsilon = max(self.epsilon_min, self.epsilon * self.epsilon_decay)
             avg_awards.append(total_reward)
